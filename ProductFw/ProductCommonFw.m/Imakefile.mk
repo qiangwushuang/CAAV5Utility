@@ -16,4 +16,5 @@ JS0GROUP	\
 CATProductStructure1 \
 CATObjectModelerBase \
 SystemMdl	\
+CATMecModInterfaces \
 # END WIZARD EDITION ZONE

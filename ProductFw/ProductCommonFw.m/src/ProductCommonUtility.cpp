@@ -12,6 +12,7 @@
 //===================================================================
 
 #include "ProductCommonUtility.h"
+#include "CATIPrtPart.h"
 #include "SystemUtility.h"
 #include "CATInit.h"
 #include "CATPrsWorkModeServices.h"
@@ -102,4 +103,17 @@ HRESULT ProductCommonUtility::GetPartContainer(CATIProduct_var ispProduct,CATIPr
 		} 
 	}
 	return E_FAIL;
+}
+
+HRESULT ProductCommonUtility::GetPrtPart(CATIProduct_var ispProduct,CATIPrtPart_var ospPrtPart)
+{
+	HRESULT rc = E_FAIL;
+	CATIPrtContainer *pIPrtContainer = NULL;
+	if (FAILED(GetPartContainer(ispProduct,pIPrtContainer)) || pIPrtContainer == NULL)
+	{
+		return E_FAIL;
+	}
+
+	ospPrtPart = pIPrtContainer->GetPart();
+	return S_OK;
 }

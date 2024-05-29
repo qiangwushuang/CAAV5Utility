@@ -15,6 +15,7 @@
 #define ProductCommonUtility_H
 
 #include "ProductCommonFw.h"
+#include "CATIPrtPart.h"
 #include "CATIProduct.h"
 
 
@@ -30,20 +31,36 @@ virtual ~ProductCommonUtility ();
 
 
 
-/*
-	Role    :
-		
-	Param	:	
-		CATIProduct_var ispProduct : 
-		CATIPrtContainer * & oPrtContainer : 
-	Return	:   
-		HRESULT
-	
-	Create	:
-		liqiang Date : 20220124
-*/
+//************************************
+// Method:     GetPartContainer
+// FullName:   ProductCommonUtility::GetPartContainer
+// Access:     public static 
+// Returns:    HRESULT
+// Parameter:  CATIProduct_var ispProduct
+// Parameter:  CATIPrtContainer * & oPrtContainer
+// Description: 获取Container
+//************************************
 static HRESULT GetPartContainer(CATIProduct_var ispProduct,CATIPrtContainer *&oPrtContainer);
 
+//************************************
+// Method:     GetPrtPart
+// FullName:   ProductCommonUtility::GetPrtPart
+// Access:     public 
+// Returns:    HRESULT
+// Parameter:  CATIProduct_var ispProduct
+// Parameter:  CATIPrtPart * & oPrtPart
+// Description: 获取PrtPart
+//************************************
+static HRESULT GetPrtPart(CATIProduct_var ispProduct,CATIPrtPart_var ospPrtPart);
+
+//************************************
+// Method:     OpenProduct
+// FullName:   ProductCommonUtility::OpenProduct
+// Access:     public static 
+// Returns:    CATIProduct_var
+// Parameter:  const CATUnicodeString & iPath
+// Description: 打开产品
+//************************************
 static CATIProduct_var OpenProduct(const CATUnicodeString &iPath);
 private:
 // Copy constructor and equal operator
