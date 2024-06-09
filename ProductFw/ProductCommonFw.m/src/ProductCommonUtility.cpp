@@ -12,6 +12,7 @@
 //===================================================================
 
 #include "ProductCommonUtility.h"
+#include "CATIContainer.h"
 #include "CATIPrtPart.h"
 #include "SystemUtility.h"
 #include "CATInit.h"
@@ -65,6 +66,33 @@ CATIProduct_var ProductCommonUtility::OpenProduct(const CATUnicodeString &iPath)
 	return spIProduct;
 }
 
+HRESULT ProductCommonUtility::GetContainer(CATIProduct_var ispProduct,CATIContainer *&oIContainer)
+{
+	HRESULT rc = E_FAIL;
+	if (ispProduct == NULL_var)
+	{
+		return rc;
+	}
+	//打开编辑模式
+	rc = CATPrsWorkModeServices::SetWorkMode(ispProduct,CATPrsWorkModeServices::WM_DESIGN);
+	if (SUCCEEDED(rc))
+	{
+		// loads the document and initializes it
+		CATDocument *pDoc = NULL;
+		SystemUtility::GetDocumentFromProduct(ispProduct,pDoc); 
+		if (NULL == pDoc )
+		{
+			return E_FAIL;
+		}
+		SEQUENCE( CATBaseUnknown_ptr ) listMemberOfDoc = pDoc->ListMembers(CATIContainer::ClassName() );
+		if (listMemberOfDoc.length() > 0)
+		{
+			rc =listMemberOfDoc[0]->QueryInterface(IID_CATIContainer,(void **)&oIContainer);
+		}
+	}
+	return rc;
+}
+
 HRESULT ProductCommonUtility::GetPartContainer(CATIProduct_var ispProduct,CATIPrtContainer *&oPrtContainer)
 {
 	HRESULT rc = E_FAIL;
@@ -92,13 +120,14 @@ HRESULT ProductCommonUtility::GetPartContainer(CATIProduct_var ispProduct,CATIPr
 		if ( NULL != pDocAsInit )
 		{
 			// Extracts from document a reference to its part in hPartAsRequest
-			piPartContainer = (CATIPrtContainer*)pDocAsInit->GetRootContainer("CATIPrtContainer");
+			CATBaseUnknown *pRootContainer = pDocAsInit->GetRootContainer("CATIPrtContainer");
 			pDocAsInit->Release(); pDocAsInit = NULL ;
 
-			if( NULL != piPartContainer )
+			if( NULL != pRootContainer )
 			{
-				oPrtContainer = piPartContainer;
-				return S_OK;
+				rc = pRootContainer->QueryInterface(IID_CATIPrtContainer,(void **)&oPrtContainer);
+				pRootContainer->Release();
+				pRootContainer = NULL;
 			} 
 		} 
 	}
@@ -115,5 +144,7 @@ HRESULT ProductCommonUtility::GetPrtPart(CATIProduct_var ispProduct,CATIPrtPart_
 	}
 
 	ospPrtPart = pIPrtContainer->GetPart();
+	pIPrtContainer->Release();
+	pIPrtContainer = NULL;
 	return S_OK;
 }

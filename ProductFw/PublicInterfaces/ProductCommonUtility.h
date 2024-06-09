@@ -62,6 +62,16 @@ static HRESULT GetPrtPart(CATIProduct_var ispProduct,CATIPrtPart_var ospPrtPart)
 // Description: 打开产品
 //************************************
 static CATIProduct_var OpenProduct(const CATUnicodeString &iPath);
+//************************************
+// Method:     GetContainer
+// FullName:   ProductCommonUtility::GetContainer
+// Access:     public static 
+// Returns:    HRESULT
+// Parameter:  CATIProduct_var ispProduct
+// Parameter:  CATIContainer * & oIContainer
+// Description:
+//************************************
+static HRESULT GetContainer(CATIProduct_var ispProduct,CATIContainer *&oIContainer);
 private:
 // Copy constructor and equal operator
 // -----------------------------------

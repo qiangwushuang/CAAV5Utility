@@ -14,6 +14,7 @@
 AddPrereqComponent("System",Protected);
 AddPrereqComponent("SpecialAPI",Public);
 AddPrereqComponent("ObjectModelerBase",Public);
+AddPrereqComponent("ObjectSpecsModeler",Public);
 AddPrereqComponent("Visualization",Public);
 AddPrereqComponent("ProductStructure",Public);
 AddPrereqComponent("ApplicationFrame",Public);
