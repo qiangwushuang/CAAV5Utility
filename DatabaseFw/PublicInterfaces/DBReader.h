@@ -1,5 +1,5 @@
 //===================================================================
-// COPYRIGHT liqiang 2021/05/29
+// COPYRIGHT qws 2021/05/29
 //===================================================================
 // DBReader.cpp
 // Header definition of class DBReader
@@ -19,7 +19,7 @@
 #include <vector>
 
 class sqlite3;
-namespace liqiang{
+namespace qws{
 	class ExportedByDatabaseOperator DBReader
 	{
 		enum DatabaseType
@@ -42,7 +42,7 @@ namespace liqiang{
 			bool
 		
 		Create	:
-			liqiang Date : 20210601
+			qws Date : 20210601
 	*/
 	bool OpenSQLite(const CATUnicodeString &iFile);
 	/*
@@ -53,7 +53,7 @@ namespace liqiang{
 			bool
 		
 		Create	:
-			liqiang Date : 20210601
+			qws Date : 20210601
 	*/
 	bool isValid() const {return _isValid;}
 	/*
@@ -66,7 +66,7 @@ namespace liqiang{
 			bool
 		
 		Create	:
-			liqiang Date : 20210601
+			qws Date : 20210601
 	*/
 	bool RunSQL(const CATUnicodeString &iSQL,std::vector<std::vector<CATUnicodeString>> &oDatas);
 

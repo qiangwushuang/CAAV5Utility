@@ -40,7 +40,7 @@ virtual ~SystemUtility ();
 		CATUnicodeString
 	
 	Create	:
-		liqiang Date:210406
+		qws Date:210406
 */
 static CATUnicodeString GetMACID();
 
@@ -54,7 +54,7 @@ static CATUnicodeString GetMACID();
 		CATUnicodeString
 	
 	Create	:
-		liqiang Date:210414
+		qws Date:210414
 */
 static CATUnicodeString GetAlias(CATBaseUnknown_var ispIObj);
 
@@ -68,7 +68,7 @@ static CATUnicodeString GetAlias(CATBaseUnknown_var ispIObj);
 		CATUnicodeString
 	
 	Create	:
-		liqiang Date : 20210601
+		qws Date : 20210601
 */
 static CATUnicodeString SearchFile(const CATUnicodeString &iFile);
 /*
@@ -82,7 +82,7 @@ static CATUnicodeString SearchFile(const CATUnicodeString &iFile);
 		CATUnicodeString
 	
 	Create	:
-		liqiang Date : 20210601
+		qws Date : 20210601
 */
 static CATUnicodeString StringRemoveChar(CATUnicodeString iStr,const CATUnicodeString &iChar,const CATUnicodeString::CATSearchMode &iSearchMode);
 /*
@@ -95,7 +95,7 @@ static CATUnicodeString StringRemoveChar(CATUnicodeString iStr,const CATUnicodeS
 		CATListValCATUnicodeString
 	
 	Create	:
-		liqiang Date : 20210601
+		qws Date : 20210601
 */
 static CATListValCATUnicodeString StringToList(const CATUnicodeString& isLongString, const CATUnicodeString& isSplitStr);
 /*
@@ -108,7 +108,7 @@ static CATListValCATUnicodeString StringToList(const CATUnicodeString& isLongStr
 		CATUnicodeString
 	
 	Create	:
-		liqiang Date : 20210601
+		qws Date : 20210601
 */
 static CATUnicodeString PathAppendFile(const CATUnicodeString &iDir,const CATUnicodeString &iFile);
 /*
@@ -121,7 +121,7 @@ static CATUnicodeString PathAppendFile(const CATUnicodeString &iDir,const CATUni
 		bool
 	
 	Create	:
-		liqiang Date : 20210813
+		qws Date : 20210813
 */
 static bool SetVisibility(CATBaseUnknown_var iObj,bool isHide);
 /*
@@ -133,7 +133,7 @@ static bool SetVisibility(CATBaseUnknown_var iObj,bool isHide);
 		CATUnicodeString
 	
 	Create	:
-		liqiang Date : 20220123
+		qws Date : 20220123
 */
 static CATUnicodeString GetProductPath(CATIProduct_var ispIProduct);
 /*
@@ -146,7 +146,7 @@ static CATUnicodeString GetProductPath(CATIProduct_var ispIProduct);
 		HRESULT
 	
 	Create	:
-		liqiang Date : 20220123
+		qws Date : 20220123
 */
 static HRESULT GetDocumentFromProduct(CATIProduct_var ispIProduct,CATDocument *&oDoc);
 /*
@@ -157,7 +157,7 @@ static HRESULT GetDocumentFromProduct(CATIProduct_var ispIProduct,CATDocument *&
 		@ CATUnicodeString
 	
 	Create	:
-		liqiang Date : 20220218
+		qws Date : 20220218
 */
 static CATUnicodeString GetUserName();
 /*
@@ -168,7 +168,7 @@ static CATUnicodeString GetUserName();
 		@ CATUnicodeString
 	
 	Create	:
-		liqiang Date : 20220221
+		qws Date : 20220221
 */
 static CATUnicodeString GetCATIAVersion();
 /*
@@ -182,7 +182,7 @@ static CATUnicodeString GetCATIAVersion();
 		@ int
 	
 	Create	:
-		liqiang Date : 20220221
+		qws Date : 20220221
 */
 static int CaculateWeekDay(int y,int m,int d);
 /*
@@ -195,7 +195,7 @@ static int CaculateWeekDay(int y,int m,int d);
 		@ bool
 	
 	Create	:
-		liqiang Date : 20220317
+		qws Date : 20220317
 */
 static bool IsDirectoryExist(const CATUnicodeString &iDir,const bool &iCreate = false);
 //************************************
@@ -254,7 +254,7 @@ static int Msg(CATUnicodeString isMsg,CATUnicodeString isTitle ,unsigned long St
 		HRESULT
 	
 	Create	:
-		liqiang Date : 20220124
+		qws Date : 20220124
 */
 static HRESULT SystemUtility::GetRootProduct(CATIProduct_var &oPrd);
 

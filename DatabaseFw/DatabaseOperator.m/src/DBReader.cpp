@@ -1,5 +1,5 @@
 //===================================================================
-// COPYRIGHT liqiang 2021/05/29
+// COPYRIGHT qws 2021/05/29
 //===================================================================
 // DBReader.cpp
 // Header definition of class DBReader
@@ -16,7 +16,7 @@
 #include "sqlite3/sqlite3.h"
 #include <iostream>
 
-using namespace liqiang;
+using namespace qws;
 //-----------------------------------------------------------------------------
 // DBReader : constructor
 //-----------------------------------------------------------------------------
@@ -27,6 +27,10 @@ bool DeveloperTest = false;
 
 char* U2G(const char* utf8)  
 {
+	if (utf8 == NULL)
+	{
+		return "";
+	}
 	int len = MultiByteToWideChar(CP_UTF8, 0, utf8, -1, NULL, 0);  
 	wchar_t* wstr = new wchar_t[len+1];  
 	memset(wstr, 0, len+1);  
