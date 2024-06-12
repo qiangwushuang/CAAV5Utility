@@ -456,7 +456,7 @@ bool SystemUtility::IsDirectoryExist(const CATUnicodeString &iDir,const bool &iC
 }
 
 
-HRESULT SystemUtility::Heightlight(CATBaseUnknown_var iPath)
+HRESULT SystemUtility::Highlight(CATBaseUnknown_var iPath)
 {
 	HRESULT rc = E_FAIL;
 	CATFrmEditor * pCurEditor = CATFrmEditor::GetCurrentEditor();
@@ -488,7 +488,7 @@ HRESULT SystemUtility::Heightlight(CATBaseUnknown_var iPath)
 	return S_OK;
 }
 
-HRESULT SystemUtility::HeightlightFace(CATFace_var ispFace,CATBody_var iBody)
+HRESULT SystemUtility::HighlightFace(CATFace_var ispFace,CATBody_var iBody)
 {
 	if (ispFace == NULL || iBody == NULL)
 	{
@@ -497,13 +497,13 @@ HRESULT SystemUtility::HeightlightFace(CATFace_var ispFace,CATBody_var iBody)
 	CATIBRepAccess_var currentFace = ::CATBRepDecodeCellInBody(ispFace,iBody);
 	if (currentFace != NULL_var)
 	{
-		SystemUtility::Heightlight(currentFace);
+		SystemUtility::Highlight(currentFace);
 	}
 
 	return S_OK;
 }
 
-void SystemUtility::ClearHeightlight()
+void SystemUtility::ClearHighlight()
 {
 	CATFrmEditor * pCurEditor = CATFrmEditor::GetCurrentEditor();
 	if (pCurEditor)

@@ -110,11 +110,20 @@ HRESULT ProductCommonUtility::GetRootProduct(CATIProduct_var &oProduct)
 				{
 					oProduct = (*pRootProducts)[1];
 				}
+				else
+				{
+					return E_FAIL;
+				}
+			}
+			else
+			{
 				return E_FAIL;
 			}
+		}
+		else
+		{
 			return E_FAIL;
 		}
-		return E_FAIL;
 	}
 	
 	return S_OK;

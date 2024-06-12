@@ -199,32 +199,32 @@ static int CaculateWeekDay(int y,int m,int d);
 */
 static bool IsDirectoryExist(const CATUnicodeString &iDir,const bool &iCreate = false);
 //************************************
-// Method:     Heightlight
-// FullName:   SystemUtility::Heightlight
+// Method:     Highlight
+// FullName:   SystemUtility::Highlight
 // Access:     public 
 // Returns:    HRESULT
 // Parameter:  CATBaseUnknown_var iPath
 // Description:高亮
 //************************************
-static HRESULT Heightlight(CATBaseUnknown_var iPath);
+static HRESULT Highlight(CATBaseUnknown_var iPath);
 //************************************
-// Method:     HeightlightFace
-// FullName:   SystemUtility::HeightlightFace
+// Method:     HighlightFace
+// FullName:   SystemUtility::HighlightFace
 // Access:     public static 
 // Returns:    HRESULT
 // Parameter:  CATFace_var ispFace
 // Parameter:  CATBody_var iBody
 // Description:高亮face
 //************************************
-static HRESULT HeightlightFace(CATFace_var ispFace,CATBody_var iBody);
+static HRESULT HighlightFace(CATFace_var ispFace,CATBody_var iBody);
 //************************************
-// Method:     ClearHeightlight
-// FullName:   SystemUtility::ClearHeightlight
+// Method:     ClearHighlight
+// FullName:   SystemUtility::ClearHighlight
 // Access:     public 
 // Returns:    void
 // Description:清楚高亮
 //************************************
-static void ClearHeightlight();
+static void ClearHighlight();
 //************************************
 // Method:     ReframeOnHighLight
 // FullName:   SystemUtility::ReframeOnHighLight
