@@ -22,4 +22,3 @@ AddPrereqComponent("InteractiveInterfaces",Public);
 AddPrereqComponent("MecModInterfaces",Public);
 AddPrereqComponent("MechanicalModeler",Public);
 AddPrereqComponent("CommonFw",Public);
-AddPrereqComponent("ApplicationFrame",Public);
