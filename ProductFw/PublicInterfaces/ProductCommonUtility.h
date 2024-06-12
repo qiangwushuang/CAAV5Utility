@@ -72,6 +72,16 @@ static CATIProduct_var OpenProduct(const CATUnicodeString &iPath);
 // Description:
 //************************************
 static HRESULT GetContainer(CATIProduct_var ispProduct,CATIContainer *&oIContainer);
+
+//************************************
+// Method:     GetRootProduct
+// FullName:   ProductCommonUtility::GetRootProduct
+// Access:     public static 
+// Returns:    HRESULT
+// Parameter:  CATIProduct_var & oProduct
+// Description: 获取交互模式下的根节点
+//************************************
+static HRESULT GetRootProduct(CATIProduct_var &oProduct);
 private:
 // Copy constructor and equal operator
 // -----------------------------------

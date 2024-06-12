@@ -18,4 +18,9 @@ CATObjectModelerBase \
 SystemMdl	\
 CATMecModInterfaces \
 CATObjectSpecsModeler	\
+CATApplicationFrame \
+
+
+
+
 # END WIZARD EDITION ZONE

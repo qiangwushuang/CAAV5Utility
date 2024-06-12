@@ -12,6 +12,7 @@
 //===================================================================
 
 #include "ProductCommonUtility.h"
+#include "CATFrmEditor.h"
 #include "CATIContainer.h"
 #include "CATIPrtPart.h"
 #include "SystemUtility.h"
@@ -91,6 +92,32 @@ HRESULT ProductCommonUtility::GetContainer(CATIProduct_var ispProduct,CATIContai
 		}
 	}
 	return rc;
+}
+
+HRESULT ProductCommonUtility::GetRootProduct(CATIProduct_var &oProduct)
+{
+	CATFrmEditor *pFrmEditor = CATFrmEditor::GetCurrentEditor();
+	if (pFrmEditor != NULL_var)
+	{
+		CATDocument *pDoc = pFrmEditor->GetDocument();
+		if (pDoc != NULL)
+		{
+			CATIDocRoots *pDocRoots = NULL;
+			if (SUCCEEDED(pDoc->QueryInterface(IID_CATIDocRoots,(void **)&pDocRoots)) && pDocRoots != NULL)
+			{
+				CATListValCATBaseUnknown_var *pRootProducts = pDocRoots->GiveDocRoots();
+				if (pRootProducts->Size() > 0)
+				{
+					oProduct = (*pRootProducts)[1];
+				}
+				return E_FAIL;
+			}
+			return E_FAIL;
+		}
+		return E_FAIL;
+	}
+	
+	return S_OK;
 }
 
 HRESULT ProductCommonUtility::GetPartContainer(CATIProduct_var ispProduct,CATIPrtContainer *&oPrtContainer)
